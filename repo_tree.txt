@@ -122,6 +122,7 @@
 │   │       └── main.go
 │   ├── docker-compose.yml
 │   └── go.mod
+├── prueba_sync.txt
 └── repo_tree.txt
 
-21 directories, 104 files
+21 directories, 105 files
