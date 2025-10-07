@@ -49,6 +49,28 @@
 │   │   │   └── temp
 │   │   │       ├── __init__.py
 │   │   │       └── schema.py
+│   │   ├── codigo-viejo
+│   │   │   ├── 10_ordenamiento_quote-o-solo-base.py
+│   │   │   ├── 11_generar_cotizaciones_indirectas_por_quote.py.py
+│   │   │   ├── 12_generar_cotizaciones_indirectas_por_base.py.py
+│   │   │   ├── 13_unificador_cotizaciones_reales.py
+│   │   │   ├── 1_generar_schemas.py
+│   │   │   ├── 2_crear_estructura_y_llenar.py
+│   │   │   ├── 3_validar_coehrencia_estructural_y_datos_necesarios.py
+│   │   │   ├── 4_generar_tabla_minimo.py
+│   │   │   ├── 5_generar_tabla_funcional.py
+│   │   │   ├── 7_symbolos_separacion.py
+│   │   │   ├── 8_generar_cotizaciones_directas_usdt.py
+│   │   │   ├── 9_limpiador_de_indirectos_sobre_directos.py
+│   │   │   ├── kraken
+│   │   │   │   └── kraken_minimo.py
+│   │   │   ├── list_fiat
+│   │   │   │   └── kraken_fiat.py
+│   │   │   └── schemas
+│   │   │       ├── __init__.py
+│   │   │       └── kraken
+│   │   │           ├── __init__.py
+│   │   │           └── kraken_schema_taker_min.py
 │   │   ├── entrypoint.sh
 │   │   ├── modulo_absorcion
 │   │   │   ├── 1_generar_equivalente_1millon.py
@@ -102,4 +124,4 @@
 │   └── go.mod
 └── repo_tree.txt
 
-16 directories, 87 files
+21 directories, 104 files
