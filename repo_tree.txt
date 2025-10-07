@@ -1,0 +1,127 @@
+.
+├── .github
+│   └── workflows
+│       └── update-tree.yml
+├── .gitignore
+├── ARQUITECTURA.md
+├── README.md
+├── arbitraje-binance
+│   ├── .dockerignore
+│   ├── .env
+│   ├── Makefile
+│   ├── README.md
+│   ├── docker-compose.yml
+│   ├── motor_data_refinery
+│   │   ├── Dockerfile
+│   │   ├── README.md
+│   │   ├── __init__.py
+│   │   ├── codigo-nuevo
+│   │   │   ├── 0_mapear_campos_estandar.py
+│   │   │   ├── 10_generar_cotizaciones_indirectas_por_quote.py
+│   │   │   ├── 11_generar_cotizaciones_indirectas_por_base.py
+│   │   │   ├── 12_unificador_cotizaciones_reales.py
+│   │   │   ├── 1_generar_schemas.py
+│   │   │   ├── 2_crear_estructura_y_llenar.py
+│   │   │   ├── 3_validar_binance.py
+│   │   │   ├── 4_generar_tabla_unificada.py
+│   │   │   ├── 5_generar_tabla_filtrada_activos.py
+│   │   │   ├── 6_symbolos_separacion.py
+│   │   │   ├── 6a_generar_cotizador_directo_desde_ccxt.py
+│   │   │   ├── 7_generar_cotizaciones_directas.py
+│   │   │   ├── 8_generar_ruteables.py
+│   │   │   ├── 8a_preparar_pares_indirectos_filtrados.py
+│   │   │   ├── 9_ordenamiento_quote-o-solo-base.py
+│   │   │   ├── __init__.py
+│   │   │   ├── config
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── config.py
+│   │   │   │   └── db.py
+│   │   │   ├── static
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── campos_estandar.py
+│   │   │   │   ├── config_cotizacion_directa.csv
+│   │   │   │   ├── config_cotizacion_indirecta.csv
+│   │   │   │   ├── config_separador.csv
+│   │   │   │   ├── criterios_filtrados.csv
+│   │   │   │   ├── fiat.py
+│   │   │   │   ├── referencia_tabla_unica.py
+│   │   │   │   └── schema_funcional.py
+│   │   │   └── temp
+│   │   │       ├── __init__.py
+│   │   │       └── schema.py
+│   │   ├── codigo-viejo
+│   │   │   ├── 10_ordenamiento_quote-o-solo-base.py
+│   │   │   ├── 11_generar_cotizaciones_indirectas_por_quote.py.py
+│   │   │   ├── 12_generar_cotizaciones_indirectas_por_base.py.py
+│   │   │   ├── 13_unificador_cotizaciones_reales.py
+│   │   │   ├── 1_generar_schemas.py
+│   │   │   ├── 2_crear_estructura_y_llenar.py
+│   │   │   ├── 3_validar_coehrencia_estructural_y_datos_necesarios.py
+│   │   │   ├── 4_generar_tabla_minimo.py
+│   │   │   ├── 5_generar_tabla_funcional.py
+│   │   │   ├── 7_symbolos_separacion.py
+│   │   │   ├── 8_generar_cotizaciones_directas_usdt.py
+│   │   │   ├── 9_limpiador_de_indirectos_sobre_directos.py
+│   │   │   ├── kraken
+│   │   │   │   └── kraken_minimo.py
+│   │   │   ├── list_fiat
+│   │   │   │   └── kraken_fiat.py
+│   │   │   └── schemas
+│   │   │       ├── __init__.py
+│   │   │       └── kraken
+│   │   │           ├── __init__.py
+│   │   │           └── kraken_schema_taker_min.py
+│   │   ├── entrypoint.sh
+│   │   ├── modulo_absorcion
+│   │   │   ├── 1_generar_equivalente_1millon.py
+│   │   │   ├── 2_simulador_multi_slippage.py.py
+│   │   │   ├── 3_simulador_absorcion_graba_en_db.py
+│   │   │   ├── 4_clasificar_snapshot_por_absorcion.py
+│   │   │   ├── 5_triadas.py
+│   │   │   ├── 6_unificador_de_triadas.py
+│   │   │   ├── 7_extraer_pares_involucrados_triadas.py
+│   │   │   ├── 8_exportador.py
+│   │   │   ├── absorcion_descartados.csv
+│   │   │   ├── absorcion_filtrada.csv
+│   │   │   ├── cotizaciones_equivalentes_1_millon_usdt.csv
+│   │   │   ├── cotizaciones_equivalentes_1_usdt.csv
+│   │   │   ├── pares_involucrados.csv
+│   │   │   ├── snapshot_multi_slippage.csv
+│   │   │   ├── todas_las_triadas.csv
+│   │   │   └── triadas_por_forma
+│   │   │       ├── forma_1_000.csv
+│   │   │       ├── forma_2_001.csv
+│   │   │       ├── forma_3_010.csv
+│   │   │       ├── forma_4_011.csv
+│   │   │       ├── forma_5_100.csv
+│   │   │       ├── forma_6_101.csv
+│   │   │       ├── forma_7_110.csv
+│   │   │       └── forma_8_111.csv
+│   │   └── requirements.txt
+│   ├── motor_reactor_realtime
+│   │   ├── Dockerfile
+│   │   ├── README.md
+│   │   ├── README_LOCAL.md
+│   │   ├── entrypoint.sh
+│   │   ├── go.mod
+│   │   ├── go.sum
+│   │   └── main.go
+│   └── motor_sentinel
+│       ├── AGENTS.md
+│       ├── Dockerfile
+│       ├── README.md
+│       ├── calc.py
+│       ├── entrypoint.sh
+│       └── main.py
+├── beacon_node
+│   ├── .env
+│   ├── Dockerfile
+│   ├── README.md
+│   ├── cmd
+│   │   └── event_hub
+│   │       └── main.go
+│   ├── docker-compose.yml
+│   └── go.mod
+└── repo_tree.txt
+
+21 directories, 104 files
