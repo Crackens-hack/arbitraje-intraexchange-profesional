@@ -1,0 +1,116 @@
+name: stack-binance
+
+volumes:
+  mariadb:
+  redis:
+  go_mod_cache:
+  go_build_cache:
+
+networks:
+  backbone: {}
+  comms_net:
+    name: comms_net
+    external: true
+
+services:
+
+  mariadb:
+    image: mariadb:11
+    env_file: .env
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - TZ=${TZ}
+    volumes:
+      - mariadb:/var/lib/mysql
+    restart: always
+    networks: [backbone]
+    expose: ["3306"]
+
+  redis:
+    image: redis:7-alpine
+    command: ["redis-server", "--save", "", "--appendonly", "no"]
+    volumes:
+      - redis:/data
+    restart: always
+    networks: [backbone]
+    expose: ["6379"]
+
+  motor_data_refinery:
+    build:
+      context: ./motor_data_refinery
+    env_file: .env
+    user: "0:0"
+    volumes:
+      - ./motor_data_refinery:/app
+    environment:
+      - CONTAINER=true
+      - NAME=motor_data_refinery_binance
+      - SHELL=/bin/bash
+      - DB_HOST=mariadb
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_NAME=${DB_NAME}
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - API_KEY=${API_KEY_BINANCE}
+      - API_SECRET=${API_SECRET_BINANCE}
+      - TZ=${TZ}
+    depends_on: [mariadb, redis]
+    restart: unless-stopped
+    networks: [backbone]
+
+  motor_reactor_realtime:
+    build:
+      context: ./motor_reactor_realtime
+    env_file: .env
+    tty: true
+    stdin_open: true
+    command: bash -l -c "tail -f /dev/null"
+    user: "0:0"
+    environment:
+      - CONTAINER=true
+      - NAME=motor_reactor_realtime_binance
+      - SHELL=/bin/bash
+      - DB_HOST=mariadb
+      - DB_PORT=3306
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - API_KEY=${API_KEY_BINANCE}
+      - API_SECRET=${API_SECRET_BINANCE}
+    volumes:
+      - ./motor_reactor_realtime:/app
+      - go_mod_cache:/go/pkg/mod
+      - go_build_cache:/root/.cache/go-build
+    depends_on: [mariadb, redis]
+    restart: unless-stopped
+    networks: [backbone]
+
+  motor_sentinel:
+    build:
+      context: ./motor_sentinel
+    env_file: .env
+    user: "0:0"
+    volumes:
+      - ./motor_sentinel:/app
+    environment:
+      - CONTAINER=true
+      - NAME=motor_sentinel_binance
+      - SHELL=/bin/bash
+      - DB_HOST=mariadb
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_NAME=${DB_NAME}
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - HUB_WS_URL=${HUB_WS_URL:-ws://event_hub:8080/ws}
+      - HUB_TOKEN=${HUB_TOKEN:-}
+      - STACK_ID=${STACK_ID:-stack-binance}
+      - SENTINEL_ID=${SENTINEL_ID:-sentinel-01}
+    depends_on: [mariadb, redis]
+    restart: unless-stopped
+    networks:
+      - backbone
+      - comms_net

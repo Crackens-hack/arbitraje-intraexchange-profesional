@@ -1,0 +1,27 @@
+name: Update repo tree on push
+
+on:
+  push:
+    branches:
+      - '**'
+
+jobs:
+  update-tree:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install tree
+        run: sudo apt-get install -y tree
+
+      - name: Generate repo tree
+        run: |
+          tree -a -I '.git|__pycache__|venv|.vscode|.idea|node_modules|.cache|.mypy_cache|.ruff_cache|.pytest_cache' > repo_tree.txt
+
+      - name: Commit and push tree
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add repo_tree.txt
+          git diff-index --quiet HEAD || git commit -m "auto: update repo tree"
+          git push

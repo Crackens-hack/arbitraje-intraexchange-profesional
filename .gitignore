@@ -1,0 +1,40 @@
+# Logs y salidas
+logs/
+__pycache__/
+*.pyc
+datos/
+# Virtualenvs o caches
+.venv/
+.mypy_cache/
+.pytest_cache/
+.cache/
+
+# Docker
+*.pid
+*.sock
+*.db
+*~ 
+
+
+dev/
+
+# Dev de todos los motores
+/arbitraje-binance/**/dev/
+
+# Dev especificados por motor
+/arbitraje-binance/motor_data_refinery/dev/
+/arbitraje-binance/motor_reactor_realtime/dev/
+/arbitraje-binance/motor_sentinel/dev/
+
+# Referencias no modificables
+/arbitraje-binance/motor_data_refinery/precalificador_primario/
+
+# Salidas de data refinery
+/arbitraje-binance/**/output_data_refinery/
+
+# Salida a nivel de arbitraje-binance
+/arbitraje-binance/output_data_refinery/
+
+#sincronización con Google Drive
+.sync/
+SINCRONIZACION_DRIVE.md
