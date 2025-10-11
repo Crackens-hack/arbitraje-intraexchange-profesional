@@ -1,8 +1,8 @@
 """
 Separa símbolos del archivo funcional en:
-- cotizador_directo   (quote == USDT)
-- cotizador_invertido (base  == USDT)
-- cotizador_indirecto (ninguno == USDT)
+- directo   (quote == USDT)
+- invertido (base  == USDT)
+- indirecto (ninguno == USDT)
 
 Entrada:
     - Lee simbolos_spot_<exchange>.csv desde codigo/datos/estandar/
@@ -56,18 +56,18 @@ def main():
     indirecto = df[(df["base"] != INTERESADO_EN) & (df["quote"] != INTERESADO_EN)]
 
     # Exportar CSVs (solo symbol, base, quote)
-    out_directo   = OUTPUT_DIR / f"cotizador_directo_{INTERESADO_EN}.csv"
-    out_invertido = OUTPUT_DIR / f"cotizador_invertido_{INTERESADO_EN}.csv"
-    out_indirecto = OUTPUT_DIR / f"cotizador_indirecto_{INTERESADO_EN}.csv"
+    out_directo   = OUTPUT_DIR / f"directo_{INTERESADO_EN}.csv"
+    out_invertido = OUTPUT_DIR / f"invertido_{INTERESADO_EN}.csv"
+    out_indirecto = OUTPUT_DIR / f"indirecto_{INTERESADO_EN}.csv"
 
     directo.to_csv(out_directo, index=False)
     invertido.to_csv(out_invertido, index=False)
     indirecto.to_csv(out_indirecto, index=False)
 
     print(f"✅ Exportados en {OUTPUT_DIR}")
-    print(f"✔ cotizador_directo_{INTERESADO_EN}.csv:   {len(directo)} símbolos")
-    print(f"✔ cotizador_invertido_{INTERESADO_EN}.csv: {len(invertido)} símbolos")
-    print(f"✔ cotizador_indirecto_{INTERESADO_EN}.csv: {len(indirecto)} símbolos")
+    print(f"✔ directo_{INTERESADO_EN}.csv:   {len(directo)} símbolos")
+    print(f"✔ invertido_{INTERESADO_EN}.csv: {len(invertido)} símbolos")
+    print(f"✔ indirecto_{INTERESADO_EN}.csv: {len(indirecto)} símbolos")
 
 
 if __name__ == "__main__":
