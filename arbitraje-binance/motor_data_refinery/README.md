@@ -13,7 +13,6 @@ Entradas/Salidas
 - Entradas: feeds/REST/WS del exchange (crudos), snapshots, incrementales.
 - Salidas: estructuras normalizadas (ej. orderbooks, tickers, rutas A→B→C), emitidas en canal interno consumible por realtime.
 
-Continuidad (`custom-codex-refinery`)
 - `entorno.txt`: contexto del contenedor, visión y decisiones.
 - `fundaments-git.txt`: convenciones Git locales.
 - `history_git.txt`: cada cambio registrado con intención/resultado.
