@@ -35,8 +35,6 @@
 │   │   │   ├── static
 │   │   │   │   ├── __init__.py
 │   │   │   │   ├── campos_estandar.py
-│   │   │   │   ├── config_cotizacion_directa.csv
-│   │   │   │   ├── config_cotizacion_indirecta.csv
 │   │   │   │   ├── criterios_filtrados.csv
 │   │   │   │   ├── fiat.py
 │   │   │   │   └── schema_funcional.py
@@ -119,4 +117,4 @@
 ├── prueba_sync.txt
 └── repo_tree.txt
 
-21 directories, 99 files
+21 directories, 97 files
