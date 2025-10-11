@@ -1,4 +1,4 @@
-# app/codigo/1_generar_schemas.py
+# app/codigo/0_generar_schemas.py
 # pylint: disable=invalid-name
 """
 Genera un archivo de *schema* estructural basado en todos los mercados que
