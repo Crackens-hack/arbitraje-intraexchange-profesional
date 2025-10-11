@@ -22,6 +22,7 @@
 │   │   │   ├── 3_simbolos_separacion.py
 │   │   │   ├── 4_generar_equivalencias_directas_e_invertidas.py
 │   │   │   ├── 5_generar_equivalencias_indirectas.py
+│   │   │   ├── 6_unificar_equivalencias.py
 │   │   │   ├── __init__.py
 │   │   │   ├── config
 │   │   │   │   ├── __init__.py
@@ -31,8 +32,7 @@
 │   │   │   │   ├── __init__.py
 │   │   │   │   ├── campos_estandar.py
 │   │   │   │   ├── criterios_filtrados.csv
-│   │   │   │   ├── fiat.py
-│   │   │   │   └── schema_funcional.py
+│   │   │   │   └── fiat.py
 │   │   │   └── temp
 │   │   │       ├── __init__.py
 │   │   │       └── schema.py
