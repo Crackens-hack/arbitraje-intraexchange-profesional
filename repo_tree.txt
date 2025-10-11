@@ -16,11 +16,11 @@
 │   │   ├── README.md
 │   │   ├── __init__.py
 │   │   ├── codigo
-│   │   │   ├── 0_mapear_campos_estandar.py
+│   │   │   ├── 0_generar_schemas.py
 │   │   │   ├── 10_generar_cotizaciones_indirectas_por_quote.py
 │   │   │   ├── 11_generar_cotizaciones_indirectas_por_base.py
 │   │   │   ├── 12_unificador_cotizaciones_reales.py
-│   │   │   ├── 1_generar_schemas.py
+│   │   │   ├── 1_mapear_campos_estandar.py
 │   │   │   ├── 2_crear_estructura_y_llenar.py
 │   │   │   ├── 3_validar_binance.py
 │   │   │   ├── 4_generar_tabla_unificada.py
@@ -47,8 +47,7 @@
 │   │   │   │   ├── referencia_tabla_unica.py
 │   │   │   │   └── schema_funcional.py
 │   │   │   └── temp
-│   │   │       ├── __init__.py
-│   │   │       └── schema.py
+│   │   │       └── __init__.py
 │   │   ├── codigo-viejo
 │   │   │   ├── 10_ordenamiento_quote-o-solo-base.py
 │   │   │   ├── 11_generar_cotizaciones_indirectas_por_quote.py.py
@@ -125,4 +124,4 @@
 ├── prueba_sync.txt
 └── repo_tree.txt
 
-21 directories, 105 files
+21 directories, 104 files
