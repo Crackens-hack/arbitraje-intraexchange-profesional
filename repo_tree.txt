@@ -21,10 +21,7 @@
 │   │   │   ├── 11_generar_cotizaciones_indirectas_por_base.py
 │   │   │   ├── 12_unificador_cotizaciones_reales.py
 │   │   │   ├── 1_mapear_campos_estandar.py
-│   │   │   ├── 2_crear_estructura_y_llenar.py
-│   │   │   ├── 3_validar_binance.py
-│   │   │   ├── 4_generar_tabla_unificada.py
-│   │   │   ├── 5_generar_tabla_filtrada_activos.py
+│   │   │   ├── 2_filtrar_spot.py
 │   │   │   ├── 6_symbolos_separacion.py
 │   │   │   ├── 6a_generar_cotizador_directo_desde_ccxt.py
 │   │   │   ├── 7_generar_cotizaciones_directas.py
@@ -44,10 +41,10 @@
 │   │   │   │   ├── config_separador.csv
 │   │   │   │   ├── criterios_filtrados.csv
 │   │   │   │   ├── fiat.py
-│   │   │   │   ├── referencia_tabla_unica.py
 │   │   │   │   └── schema_funcional.py
 │   │   │   └── temp
-│   │   │       └── __init__.py
+│   │   │       ├── __init__.py
+│   │   │       └── schema.py
 │   │   ├── codigo-viejo
 │   │   │   ├── 10_ordenamiento_quote-o-solo-base.py
 │   │   │   ├── 11_generar_cotizaciones_indirectas_por_quote.py.py
@@ -124,4 +121,4 @@
 ├── prueba_sync.txt
 └── repo_tree.txt
 
-21 directories, 104 files
+21 directories, 101 files
