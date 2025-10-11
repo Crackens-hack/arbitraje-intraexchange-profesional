@@ -6,9 +6,10 @@ Separa símbolos del archivo funcional en:
 
 Entrada:
     - Lee simbolos_spot_<exchange>.csv desde codigo/datos/estandar/
-    - El activo de referencia (interesado_en) se define en el código.
+    - El activo de referencia (INTERESADO_EN) se define en el código.
 Salida:
     - CSVs en codigo/datos/tratamiento_de_cotizacion/
+      (solo columnas symbol, base, quote)
 """
 
 import sys
@@ -28,7 +29,7 @@ INPUT_PATH = DATOS_DIR / "estandar" / f"simbolos_spot_{EXCHANGE_ID}.csv"
 OUTPUT_DIR = DATOS_DIR / "tratamiento_de_cotizacion"
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
-# --- Main ---
+
 def main():
     if not INPUT_PATH.exists():
         print(f"❌ No se encontró el archivo de entrada: {INPUT_PATH}")
@@ -45,12 +46,16 @@ def main():
         if col in df.columns:
             df[col] = df[col].astype(str).str.strip().str.upper()
 
+    # ✅ Mantener solo columnas esenciales
+    columnas_relevantes = [c for c in ("symbol", "base", "quote") if c in df.columns]
+    df = df[columnas_relevantes]
+
     # Separar según el activo de referencia
     directo   = df[df["quote"] == INTERESADO_EN]
     invertido = df[df["base"]  == INTERESADO_EN]
     indirecto = df[(df["base"] != INTERESADO_EN) & (df["quote"] != INTERESADO_EN)]
 
-    # Exportar CSVs
+    # Exportar CSVs (solo symbol, base, quote)
     out_directo   = OUTPUT_DIR / f"cotizador_directo_{INTERESADO_EN}.csv"
     out_invertido = OUTPUT_DIR / f"cotizador_invertido_{INTERESADO_EN}.csv"
     out_indirecto = OUTPUT_DIR / f"cotizador_indirecto_{INTERESADO_EN}.csv"
@@ -63,6 +68,7 @@ def main():
     print(f"✔ cotizador_directo_{INTERESADO_EN}.csv:   {len(directo)} símbolos")
     print(f"✔ cotizador_invertido_{INTERESADO_EN}.csv: {len(invertido)} símbolos")
     print(f"✔ cotizador_indirecto_{INTERESADO_EN}.csv: {len(indirecto)} símbolos")
+
 
 if __name__ == "__main__":
     main()
