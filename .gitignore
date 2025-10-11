@@ -27,8 +27,7 @@ dev/
 /arbitraje-binance/motor_sentinel/dev/
 
 # Referencias no modificables
-/arbitraje-binance/motor_data_refinery/precalificador_primario/
-
+triadas_por_forma/
 # Salidas de data refinery
 /arbitraje-binance/**/output_data_refinery/
 
