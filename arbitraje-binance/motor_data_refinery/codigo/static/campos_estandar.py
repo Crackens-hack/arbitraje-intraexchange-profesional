@@ -27,13 +27,16 @@ TARGET_FIELDS: List[str] = [
     "symbol",
     "base",
     "quote",
-    "active",
     "fee_maker",
     "fee_taker",
     "price_precision",
     "amount_precision",
     "min_price",
     "min_amount",
+    "spot",
+    "type",
+    "active", # spot, future, swap, etc. (Dominus: no implementado aún)
+
 ]
 
 # Mapeos por exchange (INICIAL / editable por Dominus)
@@ -45,13 +48,15 @@ MAPPING: Dict[str, Dict[str, str]] = {
         "symbol": "symbol",
         "base": "base",
         "quote": "quote",
-        "active": "active",
         "maker": "fee_maker",
         "taker": "fee_taker",
         "precision_price": "price_precision",
         "precision_amount": "amount_precision",
         "limits_price_min": "min_price",
         "limits_amount_min": "min_amount",
+        "active": "active",
+        "spot": "spot",
+        "type": "type",
     },
 
     # Kraken (plantilla — revisar claves reales del flatten para Kraken)
@@ -64,6 +69,8 @@ MAPPING: Dict[str, Dict[str, str]] = {
         "taker": "fee_taker",
         "precision_price": "price_precision",
         "precision_amount": "amount_precision",
+        "spot": "spot",
+        "type": "type",
         "limits_price_min": "min_price",
         "limits_amount_min": "min_amount",
     },
