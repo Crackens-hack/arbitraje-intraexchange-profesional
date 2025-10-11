@@ -22,8 +22,7 @@
 │   │   │   ├── 12_unificador_cotizaciones_reales.py
 │   │   │   ├── 1_mapear_campos_estandar.py
 │   │   │   ├── 2_filtrar_spot.py
-│   │   │   ├── 6_symbolos_separacion.py
-│   │   │   ├── 6a_generar_cotizador_directo_desde_ccxt.py
+│   │   │   ├── 3_simbolos_separacion.py
 │   │   │   ├── 7_generar_cotizaciones_directas.py
 │   │   │   ├── 8_generar_ruteables.py
 │   │   │   ├── 8a_preparar_pares_indirectos_filtrados.py
@@ -38,7 +37,6 @@
 │   │   │   │   ├── campos_estandar.py
 │   │   │   │   ├── config_cotizacion_directa.csv
 │   │   │   │   ├── config_cotizacion_indirecta.csv
-│   │   │   │   ├── config_separador.csv
 │   │   │   │   ├── criterios_filtrados.csv
 │   │   │   │   ├── fiat.py
 │   │   │   │   └── schema_funcional.py
@@ -121,4 +119,4 @@
 ├── prueba_sync.txt
 └── repo_tree.txt
 
-21 directories, 101 files
+21 directories, 99 files
