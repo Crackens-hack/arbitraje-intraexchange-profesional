@@ -15,29 +15,7 @@
 │   │   ├── Dockerfile
 │   │   ├── README.md
 │   │   ├── __init__.py
-│   │   ├── codigo
-│   │   │   ├── 0_generar_schemas.py
-│   │   │   ├── 1_mapear_campos_estandar.py
-│   │   │   ├── 2_filtrar_spot.py
-│   │   │   ├── 3_simbolos_separacion.py
-│   │   │   ├── 4_generar_equivalencias_directas_e_invertidas.py
-│   │   │   ├── 5_generar_equivalencias_indirectas.py
-│   │   │   ├── 6_unificar_equivalencias.py
-│   │   │   ├── __init__.py
-│   │   │   ├── config
-│   │   │   │   ├── __init__.py
-│   │   │   │   ├── config.py
-│   │   │   │   └── db.py
-│   │   │   ├── static
-│   │   │   │   ├── __init__.py
-│   │   │   │   ├── campos_estandar.py
-│   │   │   │   ├── criterios_filtrados.csv
-│   │   │   │   └── fiat.py
-│   │   │   └── temp
-│   │   │       ├── __init__.py
-│   │   │       └── schema.py
-│   │   ├── entrypoint.sh
-│   │   ├── modulo_absorcion
+│   │   ├── absorcion
 │   │   │   ├── 1_generar_equivalente_1millon.py
 │   │   │   ├── 2_simulador_multi_slippage.py.py
 │   │   │   ├── 3_simulador_absorcion_graba_en_db.py
@@ -62,6 +40,28 @@
 │   │   │       ├── forma_6_101.csv
 │   │   │       ├── forma_7_110.csv
 │   │   │       └── forma_8_111.csv
+│   │   ├── codigo
+│   │   │   ├── 0_generar_schemas.py
+│   │   │   ├── 1_mapear_campos_estandar.py
+│   │   │   ├── 2_filtrar_spot.py
+│   │   │   ├── 3_simbolos_separacion.py
+│   │   │   ├── 4_generar_equivalencias_directas_e_invertidas.py
+│   │   │   ├── 5_generar_equivalencias_indirectas.py
+│   │   │   ├── 6_unificar_equivalencias.py
+│   │   │   ├── __init__.py
+│   │   │   ├── config
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── config.py
+│   │   │   │   └── db.py
+│   │   │   ├── static
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── campos_estandar.py
+│   │   │   │   ├── criterios_filtrados.csv
+│   │   │   │   └── fiat.py
+│   │   │   └── temp
+│   │   │       ├── __init__.py
+│   │   │       └── schema.py
+│   │   ├── entrypoint.sh
 │   │   └── requirements.txt
 │   ├── motor_reactor_realtime
 │   │   ├── Dockerfile
