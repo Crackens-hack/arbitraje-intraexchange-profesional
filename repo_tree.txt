@@ -48,6 +48,7 @@
 │   │   │   ├── 4_generar_equivalencias_directas_e_invertidas.py
 │   │   │   ├── 5_generar_equivalencias_indirectas.py
 │   │   │   ├── 6_unificar_equivalencias.py
+│   │   │   ├── 7_exportar_a_absorcion.py
 │   │   │   ├── __init__.py
 │   │   │   ├── config
 │   │   │   │   ├── __init__.py
@@ -89,4 +90,4 @@
 │   └── go.mod
 └── repo_tree.txt
 
-16 directories, 74 files
+16 directories, 75 files
