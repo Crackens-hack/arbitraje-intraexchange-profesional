@@ -24,13 +24,6 @@
 │   │   │   ├── 6_unificador_de_triadas.py
 │   │   │   ├── 7_extraer_pares_involucrados_triadas.py
 │   │   │   ├── 8_exportador.py
-│   │   │   ├── absorcion_descartados.csv
-│   │   │   ├── absorcion_filtrada.csv
-│   │   │   ├── cotizaciones_equivalentes_1_millon_usdt.csv
-│   │   │   ├── cotizaciones_equivalentes_1_usdt.csv
-│   │   │   ├── pares_involucrados.csv
-│   │   │   ├── snapshot_multi_slippage.csv
-│   │   │   ├── todas_las_triadas.csv
 │   │   │   └── triadas_por_forma
 │   │   │       ├── forma_1_000.csv
 │   │   │       ├── forma_2_001.csv
@@ -90,4 +83,4 @@
 │   └── go.mod
 └── repo_tree.txt
 
-16 directories, 75 files
+16 directories, 68 files
