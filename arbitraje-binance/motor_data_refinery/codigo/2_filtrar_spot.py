@@ -98,8 +98,9 @@ def main():
 
     df_funcional, df_descartados = aplicar_criterios(df, criterios)
 
-    # Quitamos las columnas de control (presentes en criterios)
-    campos_a_excluir = set(criterios.keys())
+    # Quitamos las columnas de control (presentes en criterios),
+    # pero preservamos symbol, base y quote
+    campos_a_excluir = set(criterios.keys()) - {"symbol", "base", "quote"}
     df_funcional = df_funcional.drop(columns=[c for c in campos_a_excluir if c in df_funcional.columns])
 
     out_func = OUTPUT_DIR / f"simbolos_spot_{EXCHANGE_ID}.csv"
