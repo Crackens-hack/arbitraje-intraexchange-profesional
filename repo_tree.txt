@@ -16,14 +16,8 @@
 │   │   ├── README.md
 │   │   ├── __init__.py
 │   │   ├── absorcion
-│   │   │   ├── 1_generar_equivalente_1millon.py
-│   │   │   ├── 2_simulador_multi_slippage.py.py
-│   │   │   ├── 3_simulador_absorcion_graba_en_db.py
-│   │   │   ├── 4_clasificar_snapshot_por_absorcion.py
+│   │   │   ├── 1_schema_book.py
 │   │   │   ├── 5_triadas.py
-│   │   │   ├── 6_unificador_de_triadas.py
-│   │   │   ├── 7_extraer_pares_involucrados_triadas.py
-│   │   │   ├── 8_exportador.py
 │   │   │   └── triadas_por_forma
 │   │   │       ├── forma_1_000.csv
 │   │   │       ├── forma_2_001.csv
@@ -83,4 +77,4 @@
 │   └── go.mod
 └── repo_tree.txt
 
-16 directories, 68 files
+16 directories, 62 files
