@@ -55,7 +55,12 @@ def main():
     invertido = df[df["base"]  == INTERESADO_EN]
     indirecto = df[(df["base"] != INTERESADO_EN) & (df["quote"] != INTERESADO_EN)]
 
-    # Exportar CSVs (solo symbol, base, quote)
+    # 🔤 Ordenar alfabéticamente por 'symbol'
+    directo   = directo.sort_values(by="symbol", ascending=True)
+    invertido = invertido.sort_values(by="symbol", ascending=True)
+    indirecto = indirecto.sort_values(by="symbol", ascending=True)
+
+    # Exportar CSVs
     out_directo   = OUTPUT_DIR / f"directo_{INTERESADO_EN}.csv"
     out_invertido = OUTPUT_DIR / f"invertido_{INTERESADO_EN}.csv"
     out_indirecto = OUTPUT_DIR / f"indirecto_{INTERESADO_EN}.csv"
