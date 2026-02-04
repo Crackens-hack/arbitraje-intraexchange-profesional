@@ -1,20 +1,10 @@
 .
-├── .github
-│   └── workflows
-│       └── update-tree.yml
-├── .gitignore
-├── ARQUITECTURA.md
-├── README.md
 ├── arbitraje-binance
+│   ├── docker-compose.yml
 │   ├── .dockerignore
 │   ├── .env
 │   ├── Makefile
-│   ├── README.md
-│   ├── docker-compose.yml
 │   ├── motor_data_refinery
-│   │   ├── Dockerfile
-│   │   ├── README.md
-│   │   ├── __init__.py
 │   │   ├── absorcion
 │   │   │   ├── 1_schema_book.py
 │   │   │   ├── 5_triadas.py
@@ -36,45 +26,58 @@
 │   │   │   ├── 5_generar_equivalencias_indirectas.py
 │   │   │   ├── 6_unificar_equivalencias.py
 │   │   │   ├── 7_exportar_a_absorcion.py
-│   │   │   ├── __init__.py
 │   │   │   ├── config
-│   │   │   │   ├── __init__.py
 │   │   │   │   ├── config.py
-│   │   │   │   └── db.py
+│   │   │   │   ├── db.py
+│   │   │   │   └── __init__.py
+│   │   │   ├── __init__.py
 │   │   │   ├── static
-│   │   │   │   ├── __init__.py
 │   │   │   │   ├── campos_estandar.py
 │   │   │   │   ├── criterios_filtrados.csv
-│   │   │   │   └── fiat.py
+│   │   │   │   ├── fiat.py
+│   │   │   │   └── __init__.py
 │   │   │   └── temp
 │   │   │       ├── __init__.py
 │   │   │       └── schema.py
+│   │   ├── Dockerfile
 │   │   ├── entrypoint.sh
+│   │   ├── __init__.py
+│   │   ├── README.md
 │   │   └── requirements.txt
 │   ├── motor_reactor_realtime
 │   │   ├── Dockerfile
-│   │   ├── README.md
-│   │   ├── README_LOCAL.md
 │   │   ├── entrypoint.sh
 │   │   ├── go.mod
 │   │   ├── go.sum
-│   │   └── main.go
-│   └── motor_sentinel
-│       ├── AGENTS.md
-│       ├── Dockerfile
-│       ├── README.md
-│       ├── calc.py
-│       ├── entrypoint.sh
-│       └── main.py
+│   │   ├── main.go
+│   │   ├── README_LOCAL.md
+│   │   └── README.md
+│   ├── motor_sentinel
+│   │   ├── AGENTS.md
+│   │   ├── calc.py
+│   │   ├── Dockerfile
+│   │   ├── entrypoint.sh
+│   │   ├── main.py
+│   │   └── README.md
+│   └── README.md
+├── ARQUITECTURA.md
 ├── beacon_node
-│   ├── .env
-│   ├── Dockerfile
-│   ├── README.md
 │   ├── cmd
 │   │   └── event_hub
 │   │       └── main.go
 │   ├── docker-compose.yml
-│   └── go.mod
-└── repo_tree.txt
+│   ├── Dockerfile
+│   ├── .env
+│   ├── go.mod
+│   └── README.md
+├── .githooks
+│   └── pre-commit
+├── .github
+│   └── workflows
+├── .gitignore
+├── README.md
+├── repo_tree.txt
+└── scripts
+    └── update_repo_tree.sh
 
-16 directories, 62 files
+18 directories, 63 files
