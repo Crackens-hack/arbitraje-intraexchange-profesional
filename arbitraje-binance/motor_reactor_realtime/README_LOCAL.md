@@ -14,7 +14,3 @@ Principios
 Entradas/Salidas
 - Entradas: estructuras estandarizadas de refinery (orderbooks/tickers/rutas).
 - Salidas: órdenes (sim/dry‑run/live), métricas de decisión, eventos a sentinel/event_hub.
-
-Continuidad (`custom-codex-realtime`)
-- `entorno.txt` | `fundaments-git.txt` | `history_git.txt`.
-

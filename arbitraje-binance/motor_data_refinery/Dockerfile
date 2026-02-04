@@ -11,8 +11,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     curl ca-certificates coreutils git openssh-client \
   && rm -rf /var/lib/apt/lists/*
 
-# === SIN CODEX ===  🚫
-# (Eliminamos por completo ARG CODEX_VERSION, CODEX_CLI_URL, CODEX_SHA256 y todo lo relacionado)
 
 # Dependencias Python (copiadas desde tu contexto)
 COPY requirements.txt /app/motor_data_refinery/

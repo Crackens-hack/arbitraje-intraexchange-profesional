@@ -18,7 +18,6 @@
   - Puede calcular indicadores de microestructura para pausar/alertar.
 - `beacon_node` / servicio `event_hub` (Hub):
   - WebSocket server; recolecta eventos de sentinels (WS) y puede notificar (p.ej., Telegram) y/o exponer control remoto (pausa/ajustes).
-- `arbitraje-binance/custom-codex-*` (Continuidad por motor):
   - Bitácoras operativas, fundamentos, entorno, historia de cambios; aislado por servicio para trazabilidad.
 
 ## Topología de Despliegue
@@ -27,7 +26,6 @@
   - `event_hub` escucha por defecto en `:8080` (ruta `/ws`).
 - Contenedores:
   - Definidos en `arbitraje-binance/docker-compose.yml` (y `.env` en esa carpeta).
-  - Volúmenes `custom-codex-<motor>` montados RW; monorepo global montado RO dentro de cada contenedor (seguridad).
 - Interconexión:
   - `motor_sentinel` → WS → `event_hub`.
   - `motor_reactor_realtime` y `motor_data_refinery` comparten artefactos/archivos normalizados (rutas locales en volúmenes/dirs acordados).
@@ -116,7 +114,6 @@
 - `arbitraje-binance/motor_reactor_realtime/`: lógica de decisión/ejecución (estructura lista para profundizar).
 - `arbitraje-binance/motor_sentinel/`: `main.py`, `Dockerfile`, `entrypoint.sh`, dev scripts.
 - `beacon_node/cmd/event_hub/main.go`: WS Hub (Go).
-- `arbitraje-binance/custom-codex-*`: `entorno.txt`, `fundaments-git.txt`, `history_git.txt`, notas/intención.
 
 ## Ciclo Operativo
 - Pre‑market:
@@ -132,4 +129,3 @@
 - Definir esquema único “producto listo” (ruta y columnas) para `realtime`.
 - Pseudocódigo/estado de `motor_reactor_realtime`: ranking, criterio de entrada, sizing ICI, ejecución.
 - Script de backtest mínimo usando artefactos exportados por refinería.
-

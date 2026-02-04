@@ -11,7 +11,3 @@ Principios
 Entradas/Salidas
 - Entradas: métricas internas, logs del motor, hooks de ejecución.
 - Salidas: eventos WS a `event_hub`, logs normalizados.
-
-Continuidad (`custom-codex-sentinel`)
-- `entorno.txt` | `fundaments-git.txt` | `history_git.txt`.
-

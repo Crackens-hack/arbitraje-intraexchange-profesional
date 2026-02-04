@@ -9,8 +9,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     bash curl ca-certificates coreutils git openssh-client \
   && rm -rf /var/lib/apt/lists/*
 
-# 🚫 SIN Codex (borramos todos los ARG y la instalación del CLI)
-# === Codex eliminado ===
 
 # Zona horaria
 ENV TZ=UTC

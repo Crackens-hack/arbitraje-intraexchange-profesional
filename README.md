@@ -92,7 +92,7 @@ arbitraje-binance/
 
 * Todo el código y la configuración son **de uso privado y controlado**.
 * Los contenedores están **aislados entre sí** y solo comparten servicios de datos internos.
-* No hay dependencias externas (Codex, workspace global ni sistemas de sincronización automática).
+* No hay dependencias externas ni sistemas de sincronización automática.
 * Se recomienda desplegar en un **VPS cercano a los servidores de Binance** para minimizar latencia.
 
 ---
@@ -108,13 +108,11 @@ arbitraje-binance/
 
 ### 🧩 Nota técnica
 
-> A partir de la versión actual, Reform-Arbi elimina completamente cualquier dependencia de **Codex**, **workspace compartido** o **volúmenes globales**.
 > Cada motor opera dentro de su propio contenedor con raíz `/app` y comunicación solo mediante red interna de Docker.
 
 ```
 
 ---
 
-¿Querés que también te prepare la misma limpieza para el documento de arquitectura global (`ARQUITECTURA.md`)? Así los dos quedan totalmente consistentes y sin referencias a Codex.
 ```
 v

@@ -9,8 +9,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
       bash bash-completion git openssh-client ca-certificates curl coreutils \
   && rm -rf /var/lib/apt/lists/*
 
-# 🚫 Eliminamos completamente Codex (ARG + instalación)
-# === SIN CODEX CLI ===
 
 # Caches de Go (coinciden con los volumes del compose)
 ENV GOMODCACHE=/go/pkg/mod

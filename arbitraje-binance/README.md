@@ -14,8 +14,6 @@ Montajes (racional)
 - `../:ro` → `/workspace/1-repo-global-solo-lectura`: vista completa en solo lectura dentro del contenedor (contexto sin riesgo).
 - `../.git:/workspace/<motor>/.git:rw`: mapea el .git global al motor para commits locales por contenedor (trazabilidad de cambios del motor).
 - `./<motor>:/workspace/<motor>:rw`: código del motor en RW.
-- `./custom-codex-<motor>:/workspace/custom-codex-<motor>`: continuidad (bitácoras: entorno, history_git, fundaments-git, etc.).
-- `../codex-rules:/workspace/codex-rules:ro`: reglas canónicas montadas en solo lectura.
 - Volumen `workspace_root_<motor>:/workspace`: raíz RW del contenedor (asegura persistencia de home/workspace y prioridad de submontajes).
 - Logs y outputs específicos del servicio montados en rutas del motor.
 
@@ -24,11 +22,9 @@ Variables relevantes (ejemplos)
 - Credenciales DB/Redis/TZ según `.env`.
 
 Flujo recomendado en contenedor
-1) Abrir `/workspace/AGENTS.md` → apunta a `codex-rules/rules.md`.
-2) Verificar/crear `custom-codex-<motor>/entorno.txt` y plantillas `fundaments-git.txt`, `history_git.txt`.
-3) Trabajar solo dentro de `<motor>` y `custom-codex-<motor>` (commits atómicos y registro en history_git).
+1) Entrar al contenedor del motor correspondiente.
+2) Trabajar solo dentro del directorio del motor.
+3) Hacer commits atómicos y registrar cambios según tu flujo habitual.
 
 Notas
 - Este stack no busca “un botón y listo”: Dominus valida manualmente formatos por exchange; la carga de estandarización vive en refinery.
-- En producción se prioriza latencia y control; Git/Codex son herramientas de desarrollo y trazabilidad.
-
