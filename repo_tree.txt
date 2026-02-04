@@ -72,12 +72,10 @@
 │   └── README.md
 ├── .githooks
 │   └── pre-commit
-├── .github
-│   └── workflows
 ├── .gitignore
 ├── README.md
 ├── repo_tree.txt
 └── scripts
     └── update_repo_tree.sh
 
-18 directories, 63 files
+16 directories, 63 files
