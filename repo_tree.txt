@@ -70,12 +70,10 @@
 │   ├── .env
 │   ├── go.mod
 │   └── README.md
-├── .githooks
-│   └── pre-commit
 ├── .gitignore
 ├── README.md
 ├── repo_tree.txt
 └── scripts
     └── update_repo_tree.sh
 
-16 directories, 63 files
+15 directories, 62 files

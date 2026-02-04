@@ -9,5 +9,5 @@ if ! command -v tree >/dev/null 2>&1; then
   exit 0
 fi
 
-tree -a -I '.git|__pycache__|venv|.vscode|.idea|node_modules|.cache|.mypy_cache|.ruff_cache|.pytest_cache' > repo_tree.txt
+tree -a -I '.git|.githooks|__pycache__|venv|.vscode|.idea|node_modules|.cache|.mypy_cache|.ruff_cache|.pytest_cache' > repo_tree.txt
 git add repo_tree.txt
